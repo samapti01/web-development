@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset="utf-8">
+        <meta name ="viewport" content="width=device-width,initial-scale=1.0">
+    <title>coloured markers</title>
+    <link rel='stylesheet' href='styles.css'></link>
+    </head>
+<body>
+    <h1>CSS Color Markers</h1>
+    <div class="container">
+    <div class ='marker one'>
+        <div class="cap"></div>
+        <div class="sleeve"></div>
+    </div>
+    <div class ='marker two'>
+        <div class="cap"></div>
+        <div class="sleeve"></div>
+    </div>
+    <div class ='marker three'>
+        <div class="cap"></div>
+        <div class="sleeve"></div>
+    </div>
+    <div class="color-picker"></div>
+    <div id="color-indicator" class="color-picker"></div>
+    <div id="color-picker"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script>let colorIndicator=document.getElementById('color-indicator');
+            const colorPicker=new iro.ColorPicker("#color-picker",{width:180,color:"#fff"});
+            colorPicker.on('color:change',function(color){
+                colorIndicator.style.backgroundColor=color.hexString;
+            })
+    </script>
+</body>
+</html>
+</doctype>
