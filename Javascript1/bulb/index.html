@@ -1,0 +1,51 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bulb on/off project</title>
+	<style>
+		.bulb-container{
+			margin:25px;
+			padding:25px;
+			border:1px solid red;
+
+		}
+	</style>
+
+<h1>here is my bulb</h1>
+<button onclick="turnOn()">Turn on</button>
+<button onclick ="turnOff()">Turn off</button>
+<button id="onoffbutton" onclick="toggleBulb()">ON</button>
+<div class="bulb-container">
+	<img id="bulb" src="off.jpg" alt="" />
+</div>
+<script>
+	//turn on
+	const turnOn= () =>{
+		let imgOb=document.getElementById("bulb");
+		imgOb.setAttribute("src","on.jpg");
+	};
+	const turnOff=()=>{
+		let imgOb=document.getElementById("bulb");
+		imgOb.setAttribute("src","off.jpg");
+	};
+	//toggle
+	const toggleBulb=()=>{
+		let imgOb=document.getElementById("bulb");
+		let srcValue=imgOb.getAttribute("src");
+		let buttonOb=document.getElementById("onoffbutton");
+		let buttonText=buttonOb.innerHTML;
+		
+		if(srcValue=="off.jpg")
+		{
+			turnOn();
+			buttonOb.innerHTML="OFF"
+		}else{
+			turnOff();
+			buttonOb.innerHTML="ON"
+		}
+		
+	};
+	</script>
+</body>
+</html>
